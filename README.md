@@ -10,5 +10,7 @@ Here's the outline and the contents of the workshop
 4. <a href="04.md">Composite resources</a>
 5. <a href="05.md">Pull server - Extended</a>
 6. <a href="06.md">Azure Automation</a>
-7. Working with DSC + Git pull-requests in DevOps 
+7. Working with DSC + Git pull-requests in DevOps (Will only be shown at demo)
+
+Slides and recording will be available for participants. 
 
