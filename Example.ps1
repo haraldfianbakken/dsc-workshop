@@ -30,7 +30,7 @@ $guid = '6fb77d5a-0c67-42a9-8e8d-79c6941de085';
 Write-Host "Compiling pull server mofs with registrationKey $guid and $thumbPrint"
 Write-Host "Please write the registration key  - When configuring clients in pull mode, this needs to match";
 
-ConfigurePullServer -certificateThumbPrint $thumbPrint -RegistrationKey $guid -NodeName $pullservername -Verbose -OutputPath $buildDir;
+#ConfigurePullServer -certificateThumbPrint $thumbPrint -RegistrationKey $guid -NodeName $pullservername -Verbose -OutputPath $buildDir;
 Write-Host "Compiling pull client mofs with $guid ";
 
 ConfigureInsecurePullClient -NodeName $pullclientname -pullserverName $pullservername -RegistrationKey $guid -OutputPath $buildDir;
@@ -40,7 +40,7 @@ if(-not $pullserverCredential){
     $pullserverCredential = Get-Credential -Message 'Enter credentials for pullserver' "$($pullservername)\Administrator" ;    
 } 
 
-Start-DscConfiguration -ComputerName $pullservername -Wait -Verbose -Credential $pullserverCredential -Path $buildDir -Force -Debug;
+#Start-DscConfiguration -ComputerName $pullservername -Wait -Verbose -Credential $pullserverCredential -Path $buildDir -Force -Debug;
 
 if(-not $pullclientCredential){
     $pullclientCredential = Get-Credential -Message 'Enter credentials for pullclient' -UserName "$($pullclientName)\Administrator";    

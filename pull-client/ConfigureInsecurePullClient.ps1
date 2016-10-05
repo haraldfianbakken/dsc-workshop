@@ -20,7 +20,7 @@ configuration ConfigureInsecurePullClient
             AllowModuleOverwrite  = $true;
             
             # Previous in WMF 5
-            # ConfigurationID = "GUID"                     
+            #ConfigurationID = "9D81A5A6-8A23-11E6-80BA-00155D865100"                     
         }
 
         ConfigurationRepositoryWeb PullServerConfig
@@ -44,6 +44,14 @@ configuration ConfigureInsecurePullClient
             RegistrationKey    = $RegistrationKey
             AllowUnsecureConnection = $true
         }
+
+        
+        PartialConfiguration ClientConfig {
+            RefreshMode = 'Pull'
+            ConfigurationSource = '[ConfigurationRepositoryWeb]PullServerConfig'
+            ResourceModuleSource = '[ResourceRepositoryWeb]ResourceServer'
+        }
+
     }
 }
 
